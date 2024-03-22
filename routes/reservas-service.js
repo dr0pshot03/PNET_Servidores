@@ -22,8 +22,8 @@ Reservas.prototype.connectDb = function (callback) {
         });
 };
 
-Reservas.prototype.add = function (movie, callback) {
-    return db.insertOne(movie, callback);
+Reservas.prototype.add = function (reserva, callback) {
+    return db.insertOne(reserva, callback);
 };
 
 Reservas.prototype.get = function (_id, callback) {

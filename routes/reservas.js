@@ -5,7 +5,7 @@ const router = express.Router();
 const reservasService = require('./reservas-service');
 
 router.get('/', function (req, res) {
-    reservasService.getAll((err, movies) => {
+    reservasService.getAll((err, reservas) => {
             if (err) {
                 res.status(500).send({
                     msg: err
@@ -15,21 +15,21 @@ router.get('/', function (req, res) {
                     msg: "Reserva nula."
                 });
             } else {
-                res.status(200).send(movies);
+                res.status(200).send(reservas);
             }
         }
     );
 });
 
 router.post('/', function (req, res) {
-    let movie = req.body;
-    if (Object.entries(movie).length === 0){
+    let reserva = req.body;
+    if (Object.entries(reserva).length === 0){
         res.status(400).send({
             msg: 'Reserva nula.'
         });
     }
 	else{
-		moviesService.add(movie, (err, movie) => {
+		reservasService.add(reserva, (err, reserva) => {
             if (err) {
                 res.status(500).send({
                     msg: err
