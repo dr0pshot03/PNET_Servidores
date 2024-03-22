@@ -1,0 +1,150 @@
+/* Código Común */
+
+body {
+  background: linear-gradient(to bottom, #E0E4CC, #D6DBB3);
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+main{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+
+}
+
+.cabecera_total{
+
+  display: flex;
+  flex-direction: column;
+
+}
+
+.cabecera {
+
+  background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(243,134,48,1) 35%, rgba(0,212,255,1) 100%);
+  margin: 0px;
+  padding: 5px;
+
+  box-shadow: 32px 32px 64px -50px black inset;
+}
+
+
+.cabecera > img{
+
+  display: block; /*Asegura que el margen automático funcione */
+  margin: 0 auto; /* Establece margen automático horizontal */
+
+}
+
+.cabecera_total .navegacion {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  font-family: "Caveat", cursive;
+  font-size: 1.6em;
+  margin-top: 0.5%;
+
+}
+
+.cabecera_total .navegacion a {
+
+  padding: 0em 2em;
+  /* Añade relleno a los elementos <a> (enlaces) */
+  color: inherit;
+  text-decoration: none;
+
+  transition: font-size 0.3s ease;
+}
+
+.cabecera_total .navegacion a:hover {
+  color: white;
+  font-size: 1.2em;
+  text-decoration: underline;
+}
+
+
+footer {
+
+  font-family: "Lato", sans-serif;
+  background-color: white;
+  color: black;
+  margin-top: 10%;
+  width: 100%;
+  font-size: 0.8em;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  bottom:0;
+
+}
+
+
+.contenedor {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+.contenedor .contenedor_info{
+
+  display: flex;
+  flex-direction: row;
+  margin-top: 1%;
+  margin-bottom: 3%;
+
+  
+}
+
+.contenedor .contenedor_info .contenedor_info_p{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.contenedor_info_p1{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor .contenedor_info .contenedor_info_p > img{
+
+
+  width: 7%;
+  
+}
+
+.contenedor .imagen_logo{
+
+  margin-top: 1%;
+  
+
+}
+
+.tabla {
+  margin: 50px;
+  margin-top: 1em;
+}
+
+.tabla_siguenos{
+  margin: 50px;
+  margin-top: 1em;
+}
+
+.derecho {
+  margin-top: -2em;
+
+}
+
+/* Fin Común */

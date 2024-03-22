@@ -1,0 +1,320 @@
+/* Inicio Index */
+
+.seccion{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(hi_1.jpg);
+  background-color: rgba(0, 0, 0, 0.03);
+  background-size: cover;
+  background-position: 70% 35%;
+  background-blend-mode: color-dodge;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.23);
+  margin-top: 0.5%;
+
+}
+
+.seccion > h2{
+
+  margin-top: 5%;
+}
+
+.articulo{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2.5%;
+  margin-bottom: 10%;
+
+}
+
+.seccion .articulo > ul{
+
+  display: flex;
+  flex-direction: row;
+  list-style: none; 
+  font: 15px 'trebuchet MS', 'lucida sans';
+  padding: 0;
+  margin-bottom: 4em;
+  text-shadow: 0 1px 0 rgba(255,255,255,.5);
+  margin: 0 0 0 2em; 
+
+  counter-reset: li-counter;
+
+
+
+}
+
+.seccion .articulo > ul > li{
+
+  position: relative;
+  padding: 1.5em;
+  overflow: hidden;
+  margin-top: 2.5%;
+
+}
+
+.seccion .articulo > ul > li > button{
+
+  width: 100%;
+
+}
+
+.seccion .articulo > ul > li:before{
+
+
+  position: absolute;
+  top:  0.2em;
+  left: 0.20em;
+  width: 1.8em;
+  height: 1.2em;
+
+  font-size: 2em;
+  line-height: 1.2;
+  font-weight: bold;
+  text-align: center;
+
+
+  transform: rotate(-20deg);
+  z-index: 99;
+  overflow: hidden;
+
+  content: counter(li-counter);
+  counter-increment: li-counter;
+
+}
+
+.seccion .articulo > ul > li:first-child:before {
+  content: url(grafiti_.png); /* Quitamos el contenido anterior */
+  width: 30%;
+  height: 70%;
+  overflow: hidden;
+}
+
+.seccion .articulo > ul > li:nth-child(2n):before{
+
+  content: url(artes-y-manualidades.png); /* Quitamos el contenido anterior */
+  width: 30%;
+  height: 70%;
+
+}
+
+
+.seccion .articulo > ul > li:nth-child(3n):before{
+
+  content: url(paleta.png); /* Quitamos el contenido anterior */
+  width: 30%;
+  height: 70%;
+
+}
+
+.seccion .articulo > ul > li > span {
+
+  margin-right: 5px; /* Ajusta el espacio entre la enumeración y el texto */
+}
+
+
+#Noticias {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea el contenido al centro horizontalmente */
+  margin-top: 5%;
+
+
+}
+
+#Noticias>h2 {
+  align-self: center;
+}
+
+
+.Tabla {
+  
+  display: flex;
+  justify-content: center;
+  width: 750px;
+  height: 450px;
+  overflow: auto;
+
+}
+
+.fila {
+
+
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 1px 5px 1px rgba(0, 0, 0, .1);
+  background-color: #FEFBF9;
+  transition: .2s;
+  border: 2px solid;
+  border-radius: 1em ;
+  border-color:
+    #A8A7A7;
+
+  transform: scale(0.9);
+  overflow: hidden;
+
+  padding-bottom: 3%;
+  margin: 30px;
+
+
+}
+
+.fila:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 1px 15px 7px rgba(0, 0, 0, 0.2);
+
+}
+
+.fila>div {
+  margin-right: 0px;
+  /* Espacio entre los elementos dentro de la fila */
+}
+
+.fila .imagen{
+  height: 145px;
+  margin-bottom: -100px;
+} 
+
+.fila .imagen #Verano{
+  height: 150px;
+
+} 
+
+.fila .imagen img{
+
+  width: 100%;
+  /* Ancho de la imagen */
+  height: 100%;
+  /* Altura automática para mantener la proporción */
+}
+
+.fila .info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35%;
+  /* El contenido se expandirá para ocupar el espacio restante */
+}
+
+#Verano_info{
+
+  margin-top: 38%;
+  
+}
+
+.fila .info a{
+  text-align: center;
+  
+  margin-bottom: 10px;
+  color: black;
+  font-weight: bold;
+  
+}
+
+.fila .info p{
+  margin-left:20px;
+  margin-right:20px;
+}
+
+
+button {
+
+  align-self: center;
+  background-color: #70AFB7;
+  color: black;
+  font-weight: bold;
+  width:60%;
+  padding: 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  transition: .5s;
+
+}
+
+button:hover {
+
+  background-color: #69D2E7;
+  /* Cambia el color de fondo al pasar el cursor */
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+button span {
+
+  position: absolute;
+  background: black;
+  transition: .5s;
+  border: 1.5px solid #000;
+  /* Borde del botón */
+  border-radius: 3px;
+  /* Borde redondeado */
+
+}
+
+button span:nth-child(1) {
+  width: 100%;
+  height: 1px;
+  top: 0;
+  left: -100%;
+}
+
+button span:nth-child(2) {
+  width: 100%;
+  height: 1px;
+  bottom: 0;
+  right: -100%;
+}
+
+button span:nth-child(3) {
+  width: 1px;
+  height: 100%;
+  bottom: -100%;
+  left: 0;
+}
+
+button span:nth-child(4) {
+  width: 1px;
+  height: 100%;
+  top: -100%;
+  right: 0;
+}
+
+button:hover span:nth-child(1) {
+
+  left: 0;
+
+}
+
+button:hover span:nth-child(2) {
+
+  right: 0;
+
+}
+
+button:hover span:nth-child(3) {
+
+  bottom: 0;
+
+}
+
+button:hover span:nth-child(4) {
+
+  top: 0;
+
+}
+
+
+#tamano_texto {
+  font-family: "Caveat", cursive;
+  font-size: 3em;
+}
+
+
+/* Fin Index */
+

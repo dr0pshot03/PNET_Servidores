@@ -1,0 +1,156 @@
+.formulario {
+  font-family: "Caveat", cursive;
+  display: flex;
+  font-size: 1.3em;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centramos verticalmente */
+  text-align: center; /* Centramos horizontalmente */
+  font-weight: bold;
+}
+
+.card_formulario {
+  margin: 1rem;
+  padding: 1.5rem;
+  text-align: left;
+  color: inherit;
+  text-decoration: none;
+  border: 1px solid #69D2E7;
+  background-color: #A7DBD8;
+  border-radius: 10px;
+  width: 750px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.card_formulario h2 {
+  margin: 0 0 1rem 0;
+  font-size: 1.5rem;
+}
+
+.card_formulario p {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.azul {
+  background-color: white;
+  display: block;
+  margin: 0 auto;
+}
+
+
+.centro2 {
+  font-family: "Lato", cursive;
+  font-size: 1em;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.prim_grupo {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  justify-content: left;
+}
+
+.prim_grupo_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.seg_grupo {
+  display: flex;
+  padding: 25px;
+  align-items: center;
+  justify-content: left;
+}
+
+.seg_grupo_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.seg_grupo_2 > label{
+  padding-left: 5%;
+}
+
+.tercer_grupo {
+  display: flex;
+  padding: 25px;
+  justify-content: left;
+}
+
+.tercer_grupo_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.tercer_grupo_1 > label{
+  margin-bottom: -15%;
+}
+
+.cuarto_grupo {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  justify-content: left;
+}
+
+.cuarto_grupo_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.cuarto_grupo_1 > label{
+  margin-bottom: -15%;
+}
+
+
+.grupos_1_3_4{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mensaje{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#telefono,
+#personas,
+#inicio,
+#fin,
+#nombre,
+#apellidos,
+#email,
+#fecha,
+#actividad,
+#mensaje{
+  font-family: "Lato", sans-serif;
+  font-size: 0.8em;
+  margin-left: 10px;
+  margin: 10px;
+  width: 200px;
+}
+
+#tamano_texto {
+  font-family: "Caveat", cursive;
+  font-size: 3em;
+}
+
+#tamano_texto1 {
+  font-family: "Lato", cursive;
+}

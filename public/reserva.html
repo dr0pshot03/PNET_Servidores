@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=0.88">
+  <title>Asociación CreARTividad</title>
+  <link rel="icon" href="logo_pnet_web-removebg-preview.png" type="image/x-icon">
+  <link href="style.css" rel="stylesheet" media="screen and (min-width: 768px)" type="text/css" />
+  <link href="formulario.css" rel="stylesheet" media="screen and (min-width: 768px)" type="text/css" />
+  <link href="style_mobile.css" rel="stylesheet" media="screen and (max-width: 767px)" type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Merriweather&family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <script type="text/javascript" src="validacion-formulario.js" defer></script>
+</head>
+
+<body>
+
+  <div class="cabecera_total">
+
+    <header class="cabecera">
+
+      <img class="imagen" src="logo_pnet_web-removebg-preview.png" alt="Logo CreARTividad">
+
+    </header>
+
+    <nav>
+      <div class="navegacion">
+
+        <table>
+          <thead>
+            <tr>
+              <th><a href="index.html">Inicio </a></th>
+              <th><a href="nosotros.html">Asociación </a></th>
+              <th><a href="salas.html">Talleres </a></th>
+              <!--<th><a href="Galeria.html">Galería </a></th>-->
+              <th><a href="contacto.html">Contacto </a></th>
+            </tr>
+          </thead>
+        </table>
+
+      </div>
+    </nav>
+  </div>
+
+  <main>
+
+    <article id="form_entero">
+
+      <div class="centro2">
+        <h2 id="tamano_texto"> Reservas </h2>
+        <p id="tamano_texto1"> Por favor, rellene el siguiente formulario para inscribirse en el taller. Todas las actividades tiene una duración mínima de dos horas, a partir de ahí podrá estar todo el tiempo que desee.</p>
+        <p>Se puede inscribir en una actividad con hora de inicio máximo a las 18:00 y acabará a la hora de cierre.</p>
+        <p> Hora apertura: 9:00</p>
+        <p> Hora cierre: 20:00</p>
+        <p id="tamano_texto1"><b>Todos los elemento marcados con (*) son requeridos.</b></p>
+      </div>
+
+      <div class="formulario">
+        <div id="formulario_error"></div>
+        <form method="POST" action="#" class="card_formulario">
+
+          <div class="grupos_1_3_4">
+
+            <div class="prim_grupo">
+
+              <div class="prim_grupo_1">
+
+                <label for="nombre">Nombre:*</label>
+                <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
+
+              </div>
+
+              <div class="prim_grupo_1">
+
+                <label for="apellidos">Apellidos:*</label>
+                <input type="text" id="apellidos" name="apellidos" placeholder="Introduce tu apellidos">
+
+              </div>
+
+
+            </div>
+
+            <div class="tercer_grupo">
+
+
+              <div class="tercer_grupo_1">
+
+                <label for="email">Email:*</label>
+                <input type="email" id="email" name="email" placeholder="Introduce tu email">
+
+              </div>
+
+
+              <div class="tercer_grupo_1">
+
+                <label for="telefono">Tlfn Contacto:*</label><br>
+                <input type="text" id="telefono" name="telefono" placeholder="Introduce tu teléfono">
+
+
+              </div>
+
+            </div>
+
+            <div class="cuarto_grupo">
+
+              <div class="cuarto_grupo_1">
+
+                <label for="actividad">Tipo de taller:*</label>
+                <select id="actividad" name="actividad">
+                  <option value="" disabled selected>Selecciona una opción</option>
+                  <hr>
+                  <option value="1">Grafitis</option>
+                  <option value="2">Manualidades</option>
+                  <option value="3">Bellas Artes</option>
+                </select>
+
+              </div>
+
+              <div class="cuarto_grupo_1">
+
+                <label for="personas">Número de Personas:*</label><br>
+                <input type="number" id="personas" name="personas" placeholder="Introduce el nº de personas">
+
+              </div>
+
+            </div>
+
+
+
+
+          </div>
+
+
+          <div class="seg_grupo">
+
+            <div class="seg_grupo_1">
+
+              <label for="fecha">Fecha asistencia:*</label>
+              <input type="date" id="fecha" name="fecha">
+
+            </div>
+
+            <div class="seg_grupo_2">
+
+              <label for="inicio">Hora Inicio:*</label><br>
+              <input type="time" id="inicio" name="inicio">
+
+            </div>
+
+            <div class="seg_grupo_2">
+
+              <label for="fin">Hora Fin:*</label><br>
+              <input type="time" id="fin" name="fin">
+
+            </div>
+
+          </div>
+
+          <div class="mensaje">
+
+            <label for="mensaje">Si necesita dejar alguna anotación hágalo saber aquí:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" cols="45" placeholder="Escribe aquí si deseas añadir informacion adicional"></textarea>
+          </div>
+
+          <input type="submit" value="Enviar" class="azul" id="azul">
+
+        </form>
+      </div>
+
+      <br>
+    </article>
+  </main>
+
+
+  <footer>
+    <div class="contenedor">
+
+      <div class="contenedor_info">
+
+        <div class="imagen_logo">
+
+          <img class="imagen" src="logo_pnet_web-removebg-preview.png" alt="Logo CreARTividad">
+
+        </div>
+
+        <div class="contenedor_info_p">
+
+          <p>
+
+            Nuestra asociación busca impactar <br>
+            positivamente a través del arte <br>
+            proporcionando un espacio seguro para <br>
+            que los miembros de la comunidad se <br>
+            conecten y se expresen a través del arte.</b>
+
+          </p>
+
+          <div class="contenedor_info_p1">
+
+            <img src="iconos/llamada-telefonica.png" alt="Llamada">
+
+            <a href="tel:956332561">(+34) 956 33 25 61</a>
+
+          </div>
+
+          <div class="contenedor_info_p1">
+
+            <img src="iconos/email.png" alt="email"><a href="mailto:info@asociacioncreartividad.com">info@asociacioncreartividad.com </a>
+
+          </div>
+        </div>
+      </div>
+
+      <table class="tabla_siguenos">
+        <thead>
+          <tr>
+            <th>SÍGUENOS</th>
+          </tr>
+        </thead>
+        <tbody id="redes">
+          <tr>
+            <td>
+              <a href="https://www.instagram.com/asociacioncreartividad/" target="_blank">
+                <img src="iconos/instagram.png" alt="Logo Instagram">
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <a href="https://www.facebook.com/asociacioncreartividad/" target="_blank">
+                <img src="iconos/facebook.png" alt="Logo Facebook">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="https://www.x.com/asociacioncreartividad/" target="_blank">
+                <img src="iconos/gorjeo.png" alt="Logo X">
+              </a>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <a href="https://www.youtube.com/asociacioncreartividad/" target="_blank">
+                <img src="iconos/youtube.png" alt="Logo Youtube">
+              </a>
+            </td>
+          </tr>
+      </table>
+
+      <table class="tabla">
+
+        <tr>
+          <th>Nuestra asociación</th>
+        </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td><a href="index.html">¿Quiénes somos? </a></td>
+          </tr>
+
+          <tr>
+            <td><a href="salas.html">Talleres </a></td>
+          </tr>
+
+          <tr>
+            <td><a href="nosotros.html">Ubicación </a></td>
+          </tr>
+
+          <tr>
+            <td><a href="contacto.html">Formulario de contacto </a></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <p class="derecho"><b>Asociación CreARTividad&copy;. Todos los derechos reservados.</b></p>
+
+
+  </footer>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+/* Inicio Contacto */
+
+.info{
+
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.contacto{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top:50px;
+  margin-bottom: 30px;
+
+}
+
+.grupos{
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.cuarto_grupo {
+  display: flex;
+  flex-direction: row;
+  padding: 25px;
+  justify-content: left;
+}
+
+.cuarto_grupo_1{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: baseline;
+
+
+}
+
+.cuarto_grupo_1 > label{
+
+  margin-bottom: -2%;
+
+}
+
+.mensaje{
+
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+
+
+}
