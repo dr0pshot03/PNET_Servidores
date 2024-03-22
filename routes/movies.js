@@ -2,10 +2,10 @@
 
 const express = require('express');
 const router = express.Router();
-const moviesService = require('./movies-service');
+const reservasService = require('./reserva-service');
 
 router.get('/', function (req, res) {
-    moviesService.getAll((err, movies) => {
+    reservasService.getAll((err, movies) => {
             if (err) {
                 res.status(500).send({
                     msg: err
@@ -47,7 +47,7 @@ router.post('/', function (req, res) {
 
 
 router.delete('/', function (req, res) {
-    moviesService.removeAll((err) => {
+    reservasService.removeAll((err) => {
         if (err) {
             res.status(500).send({
                 msg: err
@@ -63,7 +63,7 @@ router.delete('/', function (req, res) {
 
 router.get('/:_id', function (req, res) {
     let _id = req.params._id;
-    moviesService.get(_id, (err, movie) => {
+    reservasService.get(_id, (err, movie) => {
             if (err) {
                 res.status(500).send({
                 	msg: err
@@ -83,7 +83,7 @@ router.get('/:_id', function (req, res) {
 router.put('/:_id', function (req, res) {
     const _id = req.params._id;
     const updatedMovie = req.body;
-    moviesService.update(_id, updatedMovie, (err, numUpdates) => {
+    reservasService.update(_id, updatedMovie, (err, numUpdates) => {
         if (err) {
             res.status(500).send({
                 msg: err
@@ -103,7 +103,7 @@ router.put('/:_id', function (req, res) {
 
 router.delete('/:_id', function (req, res) {
     let _id = req.params._id;
-    moviesService.remove(_id, (err) => {
+    reservasService.remove(_id, (err) => {
         if (err) {
             res.status(500).send({
                 msg: err
