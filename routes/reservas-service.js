@@ -46,4 +46,4 @@ Reservas.prototype.removeAll = function (callback) {
     return db.deleteMany({}, callback);
 };
 
-module.exports = new Movies();
+module.exports = new Reservas();
