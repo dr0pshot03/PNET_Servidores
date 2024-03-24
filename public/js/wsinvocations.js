@@ -1,5 +1,5 @@
-function getMovie(movieId) {
-    let myUrl = "/movies/" + movieId;
+function getReserva(reservaId) {
+    let myUrl = "/reservas/" + reservaId;
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -14,10 +14,10 @@ function getMovie(movieId) {
     });
 }
 
-function postMovie() {
+function postReserva() {
     $.ajax({
         type: "POST",
-        url: "/movies",
+        url: "/reservas",
         contentType: "application/json",
         dataType: "text",
         data: JSON.stringify({
@@ -34,8 +34,8 @@ function postMovie() {
     });
 }
 
-function getAllMovies() {
-    let myUrl = "/movies";
+function getAllReservas() {
+    let myUrl = "/reservas";
     $.ajax({
         type: "GET",
         dataType: "json",
@@ -49,16 +49,16 @@ function getAllMovies() {
     });
 }
 
-function deleteMovie(movieId)
+function deleteReserva(reservaId)
 {
-    let myUrl = "/movies/" + movieId;
+    let myUrl = "/reservas/" + reservaId;
     $.ajax({
         type: "DELETE",
         dataType: "text",
         url: myUrl,
         success: function(data)
         {
-            $("#resPelicula").html(JSON.parse(data).msg);
+            //$("#resPelicula").html(JSON.parse(data).msg); Aqui iria lo que muestra por pantalla
         },
         error: function(err)
         {
@@ -67,9 +67,9 @@ function deleteMovie(movieId)
     })
 }
 
-function putMovie(movieId)
+function putMovie(reservaId)
 {
-    let myUrl = "/movies/" + movieId;
+    let myUrl = "/reservas/" + movieId;
     $.ajax({
         type: "PUT",
         dataType: "json",
@@ -77,7 +77,7 @@ function putMovie(movieId)
         data: movieData,
         success: function(data)
         {
-            $("#resPelicula").html(JSON.parse(data).msg);
+            //$("#resReserva").html(JSON.parse(data).msg); Aqui iria lo que muestra por pantalla
         },
         error: function(err)
         {
