@@ -1,28 +1,48 @@
 const toNumber = require("strnum");
 
-function getReserva(reservaId) {
-    let myUrl = "/reservas/" + reservaId;
+function getReserva() {
+    let nombre = $("#nombre").val();
+
+    let myUrl = "/reservas/" + nombre;
     $.ajax({
         type: "GET",
         dataType: "json",
         url: myUrl,
         success: function(data) {
-            $(".tabla_result table tbody").empty(); // Limpiar contenido previo de la tabla
+             // Limpiar contenido previo de la tabla
+             $(".tabla_result table tbody").empty();
 
-            // Crear una nueva fila de la tabla con los datos de la reserva
-            var newRow = "<tr>" +
-                "<td>" + data.nombre + "</td>" +
-                "<td>" + data.apellidos + "</td>" +
-                "<td>" + data.email + "</td>" +
-                "<td>" + data.taller + "</td>" +
-                "<td>" + data.n_personas + "</td>" +
-                "<td>" + data.hora_inicio_fin[0] + "</td>" +
-                "<td>" + data.hora_inicio_fin[1] + "</td>" +
-                "</tr>";
-
-            // Agregar la nueva fila a la tabla
-            $(".tabla_result table tbody").append(newRow);
-        },
+             // Iterar sobre los datos y agregar filas a la tabla
+             $.each(data, function(index, reserva) {
+                 var aux;
+                 switch(Number(reserva.n_personas))
+                 {
+                     case 1:
+                         aux = "<td>" + "Grafitis" + "</td>";
+                         break;
+                     case 2:
+                         aux = "<td>" + "Manualidades" + "</td>";
+                         break;
+                     case 3:
+                         aux = "<td>" + "Bellas Artes" + "</td>";
+                         break;
+                 }
+                 // Crear una nueva fila de la tabla con los datos de la reserva
+                 var newRow = "<tr>" +
+                     "<td>" + reserva.nombre + "</td>" +
+                     "<td>" + reserva.apellidos + "</td>" +
+                     "<td>" + reserva.email + "</td>" +
+                     aux +
+                     "<td>" + reserva.taller + "</td>" +
+                     "<td>" + reserva.hora_inicio_fin[0] + "</td>" +
+                     "<td>" + reserva.hora_inicio_fin[1] + "</td>" +
+                     "<td> <button type=\"button\" onclick=\"deleteReserva('" + reserva._id.toString() + "')\">Eliminar</button></td>" +
+                     "</tr>";
+                 
+                 // Agregar la nueva fila a la tabla
+                 $(".tabla_result table tbody").append(newRow);
+             });
+         },
         error: function(res) {
             let mensaje = JSON.parse(res.responseText);
             alert("ERROR: " + mensaje.msg);
@@ -136,7 +156,7 @@ function deleteAllReserva()
         url: myUrl,
         success: function(data)
         {
-            //$("#resPelicula").html(JSON.parse(data).msg); Aqui iria lo que muestra por pantalla
+            alert ("Se han eliminado todas las reservas.")
         },
         error: function(err)
         {
