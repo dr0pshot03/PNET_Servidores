@@ -1,21 +1,19 @@
 <!doctype html>
 <html lang="es">
-  
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Asociación CreARTividad</title>
     <link rel="icon" href="logo_pnet_web-removebg-preview.png" type="image/x-icon">
     <link href="style.css" rel="stylesheet" media="screen and (min-width: 768px)" type="text/css" />
-    <link href="formulario.css" rel="stylesheet" media="screen and (min-width: 768px)" type="text/css" />
-    <link href="contacto.css" rel="stylesheet" media="screen and (min-width: 768px)" type="text/css" />
-    <link href="style_mobile.css" rel="stylesheet" media="screen and (max-width: 767px)" type="text/css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Merriweather&family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script type = "text/javascript" src = "validacion-formulario.js" defer></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type = "text/javascript" src = "./js/wsinvocations.js" defer></script>
   </head>
 
   <body>
@@ -46,121 +44,38 @@
         </div>
       </nav>
     </div>
-    
+
     <main>
+      <h1>Gestion de Reservas</h1>
+      <div class = "centro">
+        <button onclick="getAllReservas()">Obtener Todas las Reservas</button>
+        <button onclick="deleteAllReserva()">Eliminar todas las reservas</button>
+        <button onclick="putReserva()">Modificar reserva</button>
+      </div>  
 
-      <div class="contacto">
-
-        <h2 id = "tamano_texto">Contacto</h2>
-
-        <p>
-          Si deseas contactar con nosotros para más información puedes hacerlo
-          de las siguientes formas:
-        </p>
-
-
+      <div class = "tabla_result">
         <table>
           <thead>
             <tr>
-              <th>
-                <br>
-                <a href="tel:956332561">
-                  <img src="iconos/llamada-telefonica-(3).png" alt="Llamada"></a>
-              </th>
-
-              <th>
-                <br>&nbsp;&nbsp;&nbsp;
-                <a href="mailto:info@asociacioncreartividad.com">
-                  <img src="iconos/correo-electronico-(1).png" alt="email"></a>
-              </th>
+              <td><b>Nombre</b></td>
+              <td><b>Apellidos</b></td>
+              <td><b>Email</b></td>
+              <td><b>Taller</b></td>
+              <td><b>Nº Personas</b></td>
+              <td><b>Inicio</b></td>
+              <td><b>Fin</b></td>
+              <td></td>
             </tr>
-          </thead>
+            <tbody>
 
+              
+            </tbody>
         </table>
+        
       </div>
-
-      <section id="FORMULARIO">
-
-        <div class="info">
-
-          <h3 id = "tamano_texto">Formulario de contacto</h3>
-
-          <p>Si deseas que nos pongamos en contacto con usted y resolvamos su duda rellene este            formulario.</p>
-          <p><b>Todos los elemento marcados con (*) son requeridos.</b></p>
-          
-        </div>
-
-        <div class = "formulario">
-          <div id = "formulario_error"></div>
-        <form method="POST" action="#" class = "card_formulario">
-
-          <div class="grupos">
-            
-            <div class = "prim_grupo">
-
-              <div class="prim_grupo_1">
-
-                <label for="nombre" >Nombre:*</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Introduce tu nombre">
-
-              </div>
-
-              <div class="prim_grupo_1">
-
-                <label for="apellidos">Apellidos:*</label>
-                <input type="text" id="apellidos" name="apellidos" placeholder="Introduce tu apellidos">
-
-              </div>
-
-
-            </div>
-
-            <div class ="tercer_grupo">
-
-
-              <div class="tercer_grupo_1">
-
-                <label for="email">Email:*</label>
-                <input type="email" id="email" name="email" placeholder="Introduce tu email">
-
-              </div>
-
-
-              <div class="tercer_grupo_1">
-
-                <label for="telefono">Tlfn Contacto:*</label><br>
-                <input type = "text" id="telefono" name="telefono" placeholder="Introduce tu teléfono">
-
-
-              </div>
-
-            </div>
-            <div class = "cuarto_grupo">
-
-              <div class="cuarto_grupo_1">
-
-                <label for="actividad">Tipo de taller:*</label>
-                <select id="actividad" name="actividad">
-                    <option value="" disabled selected>Selecciona una opción</option>
-                    <hr>
-                    <option value="1">Grafitis</option>
-                    <option value="2">Manualidades</option>
-                    <option value="3">Bellas Artes</option>
-                </select>
-
-              </div>
-            </div>
-
-            <div class = "mensaje">
-              <label for="mensaje">Mensaje:*</label>
-              <textarea id="mensaje" name="mensaje" rows="4" cols="45"></textarea>
-            </div>       
-          </div>
-          
-          <input type="submit" value="Enviar" class = "azul" id = "contacto">
-        </form>
-      </section>
+      
     </main>
+  </body>
       <footer>         
         <div class = "contenedor">
 

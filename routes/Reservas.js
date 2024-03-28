@@ -2,7 +2,7 @@
 
 const express = require('express');
 const router = express.Router();
-const reservasService = require('./Reservas-service');
+const reservasService = require('./reservas-service');
 
 router.get('/', function (req, res) {
     reservasService.getAll((err, reserva) => {
@@ -15,7 +15,6 @@ router.get('/', function (req, res) {
                     msg: "Reservas null"
                 });
             } else {
-                
                 res.status(200).send(reserva);
             }
         }

@@ -16,8 +16,8 @@ app.use(express.urlencoded({
 }));
 app.use(logger('dev'));
 
-const reservasService = require('./routes/Reservas-service');
-const reservas = require('./routes/Reservas');
+const reservasService = require('./routes/reservas-service');
+const reservas = require('./routes/reservas');
 app.use('/reservas', reservas);
 
 app.use(express.static(path.join(__dirname, 'public'))); //Debe de ir detrás de las peticiones.

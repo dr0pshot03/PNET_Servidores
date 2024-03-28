@@ -9,6 +9,23 @@ body {
 }
 
 
+
+.centro>button{
+  margin: 1em;
+}
+
+.tabla_result{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.tabla_result td{
+  padding:3em;
+}
+
+
 main{
 
   display: flex;
