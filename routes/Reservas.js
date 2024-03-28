@@ -2,34 +2,56 @@
 
 const express = require('express');
 const router = express.Router();
-const reservasService = require('./reserva-service');
+const reservasService = require('./Reservas-service');
 
 router.get('/', function (req, res) {
-    reservasService.getAll((err, movies) => {
+    reservasService.getAll((err, reserva) => {
             if (err) {
                 res.status(500).send({
                     msg: err
                 });
-            } else if (movies.length == 0){
+            } else if (reserva.length == 0){
             	res.status(500).send({
-                    msg: "movies null"
+                    msg: "Reservas null"
                 });
             } else {
-                res.status(200).send(movies);
+                
+                res.status(200).send(reserva);
             }
         }
     );
 });
 
+router.get('/:_id', function (req, res) {
+    let _id = req.params._id;
+    reservasService.get(_id, (err, reserva) => {
+            if (err) {
+                res.status(500).send({
+                	msg: err
+            	});
+            } else if (reserva.length == 0){
+            	res.status(500).send({
+                    msg: "Reserva is null"
+                });
+            } else {
+
+                res.status(200).send(reserva);
+                
+            }
+        }
+    );
+});
+
+
 router.post('/', function (req, res) {
-    let movie = req.body;
-    if (Object.entries(movie).length === 0){
+    let reserva = req.body;
+    if (Object.entries(reserva).length === 0){
         res.status(400).send({
-            msg: 'Empty movie'
+            msg: 'Empty Reserva'
         });
     }
 	else{
-		moviesService.add(movie, (err, movie) => {
+		reservasService.add(reserva, (err, reserva) => {
             if (err) {
                 res.status(500).send({
                     msg: err
@@ -38,7 +60,7 @@ router.post('/', function (req, res) {
 			else
 			{
                 res.status(201).send({
-                    msg: 'Film created!'
+                    msg: 'Reserva created!'
                 });
             }
         });
@@ -54,36 +76,16 @@ router.delete('/', function (req, res) {
             });
         } else {
             res.status(200).send({
-                msg: 'Films deleted!'
+                msg: 'Reserva deleted!'
             });
         }
     });
 });
 
-
-router.get('/:_id', function (req, res) {
-    let _id = req.params._id;
-    reservasService.get(_id, (err, movie) => {
-            if (err) {
-                res.status(500).send({
-                	msg: err
-            	});
-            } else if (movie.length == 0){
-            	res.status(500).send({
-                    msg: "movie is null"
-                });
-            } else {
-                res.status(200).send(movie);
-            }
-        }
-    );
-});
-
-
 router.put('/:_id', function (req, res) {
     const _id = req.params._id;
-    const updatedMovie = req.body;
-    reservasService.update(_id, updatedMovie, (err, numUpdates) => {
+    const updatedreserva = req.body;
+    reservasService.update(_id, updatedreserva, (err, numUpdates) => {
         if (err) {
             res.status(500).send({
                 msg: err
@@ -94,7 +96,7 @@ router.put('/:_id', function (req, res) {
             });
         } else {
             res.status(200).send({
-                msg: 'Film updated!'
+                msg: 'Reserva updated!'
             });
         }
     });
@@ -110,7 +112,7 @@ router.delete('/:_id', function (req, res) {
             });
         } else {
             res.status(200).send({
-                msg: 'Film deleted!'
+                msg: 'Reserva deleted!'
             });
         }
     });
