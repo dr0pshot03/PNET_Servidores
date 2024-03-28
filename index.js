@@ -7,6 +7,8 @@ const cors = require('cors');
 const PORT = process.env.PORT || 8080;
 const baseAPI = '/api/v1';
 
+
+app.use(cors());
 app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({
@@ -14,9 +16,11 @@ app.use(express.urlencoded({
 }));
 app.use(logger('dev'));
 
-const reservasService = require('./routes/reservas-service');
-const reservas = require('./routes/reservas');
+const reservasService = require('./routes/Reservas-service');
+const reservas = require('./routes/Reservas');
 app.use('/reservas', reservas);
+
+app.use(express.static(path.join(__dirname, 'public'))); //Debe de ir detrás de las peticiones.
 
 const server = http.createServer(app);
 
